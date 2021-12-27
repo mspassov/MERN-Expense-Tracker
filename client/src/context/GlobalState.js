@@ -12,7 +12,7 @@ const initialState = {
 }
 
 // Create context
-export const GlobalContext = createContext(initialState)
+export const GlobalContext = createContext(initialState) 
 
 //Provider Component
 export const GlobalProvider = ({children}) =>{
