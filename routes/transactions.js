@@ -1,6 +1,14 @@
 const express = require('express');
 const router = express.Router();
+const {  getTransactions, addTransaction, deleteTransaction } = require('../controllers/txnController');
 
-router.get('/', (req, res) => res.send('Hello world!!!'));
+//router.get('/', (req, res) => res.send('Hello world!!!')); This is if we didn't have controllers
+
+router.route('/')
+    .get(getTransactions)
+    .post(addTransaction);
+
+router.route('/:id')
+    .delete(deleteTransaction);
 
 module.exports = router;
